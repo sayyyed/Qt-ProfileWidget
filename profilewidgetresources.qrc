@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>ProfileWidgetResources/Office-Male.png</file>
+        <file>ProfileWidgetResources/printer-icon.png</file>
+    </qresource>
+</RCC>

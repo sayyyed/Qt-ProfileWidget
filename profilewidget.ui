@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ProfileWidget</class>
+ <widget class="QWidget" name="ProfileWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>686</width>
+    <height>499</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">*{
+border: none;
+background-color: rgb(255, 255, 255);
+}
+
+QScrollBar:horizontal
+                                       {
+                                       height: 12px;
+                                       margin: 2px 0px;
+                                       border: 1px transparent #2A2929;
+                                       border-radius: 2px;
+                                       background-color: rgb(220, 220, 220);
+                                       }
+                                       
+                                       QScrollBar::handle:horizontal
+                                       {
+                                       background-color: rgb(80, 80, 80);
+                                       min-height: 12px;
+                                       height: 12px;
+                                       border-radius: 3px;
+                                       }
+                                       
+                                       QScrollBar::handle:horizontal:hover
+                                       {
+                                       background-color: rgb(100, 100, 100);
+                                       }
+                                       
+                                       
+                                       QScrollBar::up-arrow:horizontal, QScrollBar::down-arrow:horizontal
+                                       {
+                                       background: none;
+                                       }
+                                       
+                                       
+                                       QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal
+                                       {
+                                       background: none;
+                                       }
+                                       
+                                       QScrollBar::add-line:horizontal
+                                       {
+                                       width: 0px;
+                                       background: none;
+                                       border: none;
+                                       }
+                                       
+                                       QScrollBar::sub-line:horizontal
+                                       {
+                                       width: 0px;
+                                       background: none;
+                                       border: none;
+                                       }
+                                       
+                                       QScrollBar:vertical
+                                       {
+                                       width: 12px;
+                                       margin: 0px 2px;
+                                       border: 1px #2A2929;
+                                       border-radius: 3px;
+                                       background-color: rgb(220, 220, 220);
+                                       }
+                                       
+                                       QScrollBar::handle:vertical
+                                       {
+                                       background-color: rgb(80, 80, 80);
+                                       min-width: 12px;
+                                       width: 12px;
+                                       border-radius: 3px;
+                                       }
+                                       
+                                       QScrollBar::handle:vertical:hover
+                                       {
+                                       background-color: rgb(100, 100, 100);
+                                       }
+                                       
+                                       QScrollBar::up-arrow:vertical, QScrollBar::down-arrow:vertical
+                                       {
+                                       background: none;
+                                       }
+                                       
+                                       
+                                       QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical
+                                       {
+                                       background: none;
+                                       }
+                                       
+                                       QScrollBar::add-line:vertical
+                                       {
+                                       width: 0px;
+                                       background: none;
+                                       border: none;
+                                       }
+                                       
+                                       QScrollBar::sub-line:vertical
+                                       {
+                                       width: 0px;
+                                       background: none;
+                                       border: none;
+                                       }</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_3">
+   <item row="0" column="1">
+    <widget class="QTabWidget" name="tabWidget">
+     <property name="styleSheet">
+      <string notr="true">#tabWidget{
+border: 1px solid lightgray;
+}</string>
+     </property>
+     <property name="currentIndex">
+      <number>-1</number>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="0">
+    <widget class="QFrame" name="pictureFrame">
+     <property name="maximumSize">
+      <size>
+       <width>200</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <property name="leftMargin">
+       <number>3</number>
+      </property>
+      <property name="topMargin">
+       <number>3</number>
+      </property>
+      <property name="rightMargin">
+       <number>3</number>
+      </property>
+      <property name="bottomMargin">
+       <number>3</number>
+      </property>
+      <item alignment="Qt::AlignHCenter">
+       <widget class="QLabel" name="pictureLabel">
+        <property name="maximumSize">
+         <size>
+          <width>200</width>
+          <height>200</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">padding: 10px;
+border: 1px solid lightgray;
+border-radius: 2px;</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap resource="profilewidgetresources.qrc">:/ProfileWidgetResources/Office-Male.png</pixmap>
+        </property>
+        <property name="scaledContents">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="verticalSpacer_3">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Maximum</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QFrame" name="subImageFrame">
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <layout class="QVBoxLayout" name="subImageDetailsVerticalLayout">
+         <property name="leftMargin">
+          <number>3</number>
+         </property>
+         <property name="topMargin">
+          <number>3</number>
+         </property>
+         <property name="rightMargin">
+          <number>3</number>
+         </property>
+         <property name="bottomMargin">
+          <number>3</number>
+         </property>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <spacer name="verticalSpacer_2">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Maximum</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>30</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QFrame" name="actionsFrame">
+        <property name="styleSheet">
+         <string notr="true">#actionsFrame{
+border: 1px solid lightgray;
+border-radius: 2px;
+}</string>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <layout class="QVBoxLayout" name="actionsFrameVerticalLayout">
+         <property name="spacing">
+          <number>3</number>
+         </property>
+         <property name="leftMargin">
+          <number>6</number>
+         </property>
+         <property name="topMargin">
+          <number>6</number>
+         </property>
+         <property name="rightMargin">
+          <number>6</number>
+         </property>
+         <property name="bottomMargin">
+          <number>6</number>
+         </property>
+         <item>
+          <widget class="QLabel" name="label">
+           <property name="text">
+            <string>المهام</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <spacer name="verticalSpacer">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="1" column="1">
+    <widget class="QPushButton" name="printBtn">
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+color: white;
+border-radius: 8px;
+background-color: rgb(189, 166, 234);
+}
+QPushButton:hover{
+background-color: rgb(189, 100, 255);
+}</string>
+     </property>
+     <property name="text">
+      <string>طباعة</string>
+     </property>
+     <property name="icon">
+      <iconset resource="profilewidgetresources.qrc">
+       <normaloff>:/ProfileWidgetResources/printer-icon.png</normaloff>:/ProfileWidgetResources/printer-icon.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>28</width>
+       <height>28</height>
+      </size>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="profilewidgetresources.qrc"/>
+ </resources>
+ <connections/>
+</ui>
