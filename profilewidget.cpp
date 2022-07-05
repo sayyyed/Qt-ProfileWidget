@@ -27,6 +27,11 @@ ProfileWidget::~ProfileWidget()
     delete ui;
 }
 
+void ProfileWidget::setPrintFileName(const QString &printFileName)
+{
+    m_printFileName = printFileName;
+}
+
 void ProfileWidget::setProfilePicture(const QString &filePath)
 {
     QPixmap pixmap(filePath);
@@ -74,6 +79,8 @@ void ProfileWidget::addSection(const QString &tabTitle,
 
         sectionLabel->setTextInteractionFlags(Qt::TextSelectableByMouse);
         sectionLabel->setOpenExternalLinks(true);
+        sectionLabel->setMaximumWidth(800);
+        sectionLabel->setWordWrap(true);
 
         ui->tabWidget->addTab(widget, tabTitle);
     }
@@ -121,6 +128,16 @@ void ProfileWidget::addSection(const QString &tabTitle,
                             )")
                     .arg(s1)
                     .arg(s2);
+        }
+        else
+        {
+            text += QString(R"(
+                            <tr>
+                            <td>%0</td>
+                            <td width='150'>:</td>
+                            </tr>
+                            )")
+                    .arg(d);
         }
     }
 
@@ -179,7 +196,10 @@ void ProfileWidget::addTableSectionFromSQLQuery(const QString &tabTitle,
     QSqlQuery query;
     query.exec(sqlQuery);
     if(query.lastError().isValid())
+    {
+        qDebug().noquote() << query.lastError().text();
         return;
+    }
 
     if(query.size() > 0)
     {
@@ -250,6 +270,7 @@ void ProfileWidget::addSubPisctureDetails(const QString &data)
 #include <QPainter>
 #include <QAbstractTextDocumentLayout>
 #include <QFileDialog>
+#include <QDesktopServices>
 
 //https://stackoverflow.com/questions/44537788/page-x-of-y-using-qprinter/44540195#44540195
 static const int textMargins = 12; // in millimeters
@@ -315,6 +336,7 @@ static void printDocument(QPrinter& printer, QTextDocument* doc)
         firstPage = false;
     }
 }
+
 void ProfileWidget::on_printBtn_clicked()
 {
     if(ui->tabWidget->count() == 0)
@@ -339,7 +361,7 @@ void ProfileWidget::on_printBtn_clicked()
         return;
 
     QString fileName = QFileDialog::getSaveFileName(this, tr("Save PDF File"),
-                                 QString(), tr("PDF (*.pdf)"));
+                                 m_printFileName, tr("PDF (*.pdf)"));
 
     if(fileName.isEmpty())
         return;
@@ -364,4 +386,7 @@ void ProfileWidget::on_printBtn_clicked()
 
     printer.setOutputFileName(fileName);
     printDocument(printer, &document);
+
+    if(QFile::exists(fileName))
+        QDesktopServices::openUrl(QUrl::fromUserInput(fileName));
 }

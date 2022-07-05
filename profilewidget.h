@@ -65,6 +65,9 @@ public:
 
     void addSubPisctureDetails(const QString &data);
 
+    //
+    void setPrintFileName(const QString &printFileName);
+
 private slots:
     void on_printBtn_clicked();
 
@@ -72,6 +75,7 @@ private:
     Ui::ProfileWidget *ui;
 
     QString m_pictureFilePath;
+    QString m_printFileName;
 };
 
 #endif // PROFILEWIDGET_H
